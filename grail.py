@@ -1,5 +1,6 @@
 import os
 
+
 def main():
     stillPlaying = True
     while (stillPlaying):
@@ -13,8 +14,10 @@ def main():
 
     print("Later!")
 
+
 def evaluateHand(cards):
     return sum(cards)
+
 
 def startGame():
     print
@@ -35,7 +38,8 @@ def startGame():
         return
 
     print
-    airspeed = raw_input("What... is the airspeed velocity of an unladen swallow?\n> ")
+    question = "What... is the airspeed velocity of an unladen swallow?\n> "
+    airspeed = raw_input(question)
     if airspeed.lower() != 'an african or european swallow?':
         print
         raw_input(gameOver)
@@ -54,4 +58,3 @@ def startGame():
 
 if __name__ == '__main__':
     main()
-
