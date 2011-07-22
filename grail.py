@@ -34,13 +34,21 @@ def main():
         xpos += 50
         screen.blit(img, (xpos, ypos))
         redraw()
-        answer = raw_input("Start a new game? (y/n): ")
-        if answer == 'y' or answer == 'Y':
-            startGame()
-        elif answer == 'n' or answer == 'N':
-            stillPlaying = False
-        else:
-            print("Please type 'y' or 'n'.")
+        if xpos >= 700:
+            invalidResponse = True
+            while (invalidResponse):
+                answer = raw_input("Start a new game? (y/n): ")
+                #TODO: refactor below into same function as above (how to 
+                # do byref/byval in python
+                if answer == 'y' or answer == 'Y':
+                    xpos = 50
+                    ypos = 100
+                    invalidResponse = False
+                elif answer == 'n' or answer == 'N':
+                    stillPlaying = False
+                    invalidResponse = False
+                else:
+                    print("Please type 'y' or 'n'.")
 
     print("Later!")
 
